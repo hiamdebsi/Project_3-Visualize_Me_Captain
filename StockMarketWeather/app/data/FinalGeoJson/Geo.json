@@ -1,0 +1,52 @@
+[
+        {"Symbol": "AB", "Name": "AllianceBernstein Holding L.P", "Country": "USA", "Sector": "FINANCE", "Industry": "INVESTMENT ADVICE", "Address": "1345 AVE OF THE AMERICAS, NEW YORK, NY, US", "location": [-73.97905350481889, 40.762999699999995]}, 
+        
+        {"Symbol": "ABR", "Name": "Arbor Realty Trust Inc", "Country": "USA", "Sector": "REAL ESTATE & CONSTRUCTION", "Industry": "REAL ESTATE INVESTMENT TRUSTS", "Address": "333 EARLE OVINGTON BOULEVARD, SUITE 900, UNIONDALE, NY, US", "location": [-73.59401268665067,40.725715256246644]},
+
+        
+        {"Symbol": "AIG", "Name": "American International Group Inc", "Country": "USA", "Sector": "FINANCE", "Industry": "FIRE, MARINE & CASUALTY INSURANCE", "Address": "175 WATER STREET, NEW YORK, NY, US", "location": [-74.00517625966599,40.70656087396243]},
+
+        {"Symbol": "AIZ", "Name": "Assurant Inc", "Country": "USA", "Sector": "FINANCE", "Industry": "INSURANCE CARRIERS, NEC", "Address": "28 LIBERTY STREET, 41ST FLOOR, NEW YORK, NY, US", "location": [-74.00906123083026,40.708301601769506]},
+
+        {"Symbol": "AKR", "Name": "Acadia Realty Trust", "Country": "USA", "Sector": "REAL ESTATE & CONSTRUCTION", "Industry": "REAL ESTATE INVESTMENT TRUSTS", "Address": "411 THEODORE FREMD AVENUE, SUITE 300, RYE, NY, US", "location": [-73.70064898849404,40.973756587468685]},
+
+        
+        {"Symbol": "APO", "Name": "Apollo Global Management Inc", "Country": "USA", "Sector": "FINANCE", "Industry": "INVESTMENT ADVICE", "Address": "9 WEST 57TH STR, NEW YORK, NY, US", "location": [-73.97503373082859,40.76390772300269]}, 
+
+        {"Symbol": "ARI", "Name": "Apollo Commercial Real Estate Finance Inc", "Country": "USA", "Sector": "REAL ESTATE & CONSTRUCTION", "Industry": "REAL ESTATE INVESTMENT TRUSTS", "Address": "C/O APOLLO GLOBAL MANAGEMENT, LLC, 9 WEST 57TH STREET, 43RD FLOOR, NEW YORK, NY, US", "location": [-73.97495500199278,40.76402400543521]},
+
+
+        {"Symbol": "AXP", "Name": "American Express Company", "Country": "USA", "Sector": "FINANCE", "Industry": "FINANCE SERVICES", "Address": "200 VESEY STREET, 50TH FLOOR, NEW YORK, NY, US", "location": [-74.01480427315836,40.71385202699721]},
+
+        {"Symbol": "BG", "Name": "Bunge Limited", "Country": "USA", "Sector": "MANUFACTURING", "Industry": "FATS & OILS", "Address": "50 MAIN STREET, 6TH FLOOR, WHITE PLAINS, NY, US",  "location": [-73.77362778858799,41.03148001221493]}, 
+
+        {"Symbol": "BK", "Name": "The Bank of New York Mellon Corporation", "Country": "USA", "Sector": "FINANCE", "Industry": "STATE COMMERCIAL BANKS", "Address": "240 GREENWICH STREET, NEW YORK, NY, US", "location": [-74.01148793750001, 40.7140818125]},
+
+        {"Symbol": "BMY", "Name": "Bristol-Myers Squibb Company", "Country": "USA", "Sector": "LIFE SCIENCES", "Industry": "PHARMACEUTICAL PREPARATIONS", "Address": "430 E. 29TH STREET, 14 FLOOR, NEW YORK, NY, US", "location": [-73.97486974432188,40.7401864753694]},
+
+        {"Symbol": "BR", "Name": "Broadridge Financial Solutions Inc", "Country": "USA", "Sector": "TRADE & SERVICES", "Industry": "SERVICES-BUSINESS SERVICES, NEC", "Address": "1981 MARCUS AVENUE, LAKE SUCCESS, NY, US", "location": [-73.69563318850027,40.75905667342718]},
+
+        {"Symbol": "BRT", "Name": "BRT Apartments Corp", "Country": "USA", "Sector": "REAL ESTATE & CONSTRUCTION", "Industry": "REAL ESTATE INVESTMENT TRUSTS", "Address": "60 CUTTER MILL RD, SUITE 303, GREAT NECK, NY, US", "location": [-73.73069141548469,40.785900364649756]}, 
+
+        {"Symbol": "BRX", "Name": "Brixmor Property Group Inc", "Country": "USA", "Sector": "REAL ESTATE & CONSTRUCTION", "Industry": "REAL ESTATE INVESTMENT TRUSTS", "Address": "450 LEXINGTON AVENUE, NEW YORK, NY, US", "location": [-73.97544035, 40.75326015]}, 
+
+
+        {"Symbol": "BX", "Name": "The Blackstone Group Inc", "Country": "USA", "Sector": "FINANCE", "Industry": "INVESTMENT ADVICE", "Address": "345 PARK AVENUE, NEW YORK, NY, US", "location": [-73.97227245489567, 40.75775605]}, 
+        
+        {"Symbol": "BXMT", "Name": "Blackstone Mortgage Trust Inc", "Country": "USA", "Sector": "REAL ESTATE & CONSTRUCTION", "Industry": "REAL ESTATE INVESTMENT TRUSTS", "Address": "345 PARK AVENUE, 15TH FLOOR, NEW YORK, NY, US",  "location": [-73.97219744432127,40.758095715540406]}, 
+
+        {"Symbol": "C", "Name": "Citigroup Inc", "Country": "USA", "Sector": "FINANCE", "Industry": "NATIONAL COMMERCIAL BANKS", "Address": "388 GREENWICH STREET, NEW YORK, NY, US", "location": [-74.01117211586508, 40.72064575]}, 
+
+        {"Symbol": "CBU", "Name": "Community Bank System Inc", "Country": "USA", "Sector": "FINANCE", "Industry": "NATIONAL COMMERCIAL BANKS", "Address": "5790 WIDEWATERS PKWY, DEWITT, NY, US", "location": [-76.0590552, 43.0482618]}, 
+
+        {"Symbol": "CDR", "Name": "Cedar Realty Trust Inc", "Country": "USA", "Sector": "REAL ESTATE & CONSTRUCTION", "Industry": "REAL ESTATE INVESTMENT TRUSTS", "Address": "44 SOUTH BAYLES AVENUE, PORT WASHINGTON, NY, US", "location": [-73.68637308074153, 40.82767285]}, 
+
+        {"Symbol": "CIM", "Name": "Chimera Investment Corporation", "Country": "USA", "Sector": "REAL ESTATE & CONSTRUCTION", "Industry": "REAL ESTATE INVESTMENT TRUSTS", "Address": "520 MADISON AVENUE, 32ND FLOOR, NEW YORK, NY, US", "location": [-73.97478320199279,40.76034126314368]},
+
+        {"Symbol": "CL", "Name": "Colgate-Palmolive Company", "Country": "USA", "Sector": "LIFE SCIENCES", "Industry": "PERFUMES, COSMETICS & OTHER TOILET PREPARATIONS", "Address": "300 PARK AVE, NEW YORK, NY, US", "location": [-73.97468023082872,40.75723217922655]},
+
+        {"Symbol": "DB","Name": "Deutsche Bank Aktiengesellschaft","Country": "USA","Sector": "FINANCE", "Industry": "STATE COMMERCIAL BANKS","Address": "DEUTSCHE BANK AG - LEGAL DEPARTMENT, 60 WALL STREET - 36TH FLOOR, ROOM 3609, NEW YORK, NY, UNITED STATES","location": [-74.0082375, 40.7064404]},
+
+        {"Symbol": "IBM", "Name": "International Business Machines Corporation", "Country":"USA","Sector":"TECHNOLOGY","Industry":"COMPUTER & OFFICE EQUIPMENT","Address":"1 NEW ORCHARD ROAD, ARMONK, NY, US","location":[-73.720356,41.1134016]}
+
+]
