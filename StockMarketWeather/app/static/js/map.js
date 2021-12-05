@@ -1,7 +1,9 @@
 // Creating the map object
-var myMap = L.map("map", {
-  center: [40.7, -73.95],
-  zoom: 11
+
+let myMap = L.map("map", {
+  center: [41.6939242,-73.9536904],
+  //center: [40.7, -73.95],
+  zoom: 7
 });
 
 // Adding the tile layer
@@ -17,8 +19,8 @@ console.log(url);
 d3.json(url).then(function(response) {
   console.log(response);
   // Create a new marker cluster group.
-  //var cluster = new L.MarkerClusterGroup()
-  var markers = new L.markerClusterGroup();
+
+  let markers = new L.markerClusterGroup();
   for (let i = 0; i < response.length; i++) {
 
     // Set the data location property to a variable.
@@ -31,7 +33,8 @@ d3.json(url).then(function(response) {
 
       // Add a new marker to the cluster group, and bind a popup.
       markers.addLayer(L.marker([coord[1], coord[0]])
-        .bindPopup(response[i].Symbol));
+        .bindPopup("<h4 style='color:darkblue'>" + response[i].Symbol + " " + response[i].Name + "</h4><hr><p>" + response[i].Address + "<br>Sector: " + response[i].Sector + "<br>Industry: " + response[i].Industry + "</p>"));
+
     }
 
   }
@@ -40,6 +43,4 @@ d3.json(url).then(function(response) {
   myMap.addLayer(markers);
 
 });
-
-
-
+//end d3

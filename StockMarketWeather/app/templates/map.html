@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Map of Stocks</title>
-  <link rel="shortcut icon" type="image/jpg" href="USGSDatasetRepository.png"/>
+  <!-- Favicon-->
+  <link rel="shortcut icon" href="https://static.nyse.com/favicons/1.0.0/nyse.ico" type="image/x-icon">
 
   <!-- Leaflet JavaScript code -->
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
@@ -24,23 +25,16 @@
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
 
-
-  <!-- Local CSS -->
-  <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
-  <link rel="stylesheet" type="text/css" href="../static/css/mapstyles.css">
+   <link href="../static/css/mapstyles.css" rel="stylesheet" />
+  
+  
   
 </head>
-
-<body>
-
-  <!-- The div that holds the map -->
-  <div id="map"></div>
-
-   
-  <!-- Our JavaScript -->
+<body id="page-top">
+    <div id="map"></div>
+ <!-- Our JavaScript -->
   <script src="{{url_for('static', filename='js/map.js')}}"></script>
-
-
+  <!-- end js -->
 </body>
 
 </html>

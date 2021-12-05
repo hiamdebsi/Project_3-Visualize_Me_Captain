@@ -42,8 +42,8 @@ def getData():
     for each in all_map_data:
         del each['_id']
         myData.append(each)
-    print(myData)
-    print("hello map")
+    # print(myData)
+    #print("hello map")
     return (jsonify(myData))
 
     
