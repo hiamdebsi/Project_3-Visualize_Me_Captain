@@ -18,10 +18,40 @@ def home():
     # load home page
     return render_template("index.html")
 
+@app.route("/stockweather")
+def getPage():
+    print('hello page')
+    return render_template("stockweather.html")
 
-@app.route("/stockWeather")
-def getData1():
-    pass
+@app.route("/stockweatherdata")
+def getchartData():
+    print('hello')
+    weather = mongodb_client.db.NYC_Weather
+    stock = mongodb_client.db.IBM
+    resultwe = weather.find({'date_time':{'$gte':"2020-01-01",'$lte':"2021-10-31"}})
+    resultst = stock.find({'date':{'$gte':"2020-01-1",'$lte':"2021-10-31"}})
+
+    print(resultwe)
+    print(resultst)
+
+    resultw=[]
+    for each in resultwe:
+        del each['_id']
+        resultw.append(each)
+
+    results=[]
+    for each in resultst:
+        del each['_id']
+        results.append(each)
+
+    fresultw=[]
+    for day in resultw:
+        for sday in results:
+            if (day["date_time"] == sday["date"]):
+                fresultw.append(day)
+    
+    print(fresultw)
+    return (jsonify([fresultw,results]))
 
 @app.route("/stats")
 def getDataStats():

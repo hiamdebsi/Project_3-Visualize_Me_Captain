@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Stock and Weather Analysis</title>
+  <link rel="shortcut icon" type="image/jpg" href="USGSDatasetRepository.png"/>
+
+  <!-- Favicon-->
+  <link rel="shortcut icon" href="https://static.nyse.com/favicons/1.0.0/nyse.ico" type="image/x-icon">
+  <!-- Font Awesome icons (free version)-->
+  <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+  <!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="../static/css/styles.css" rel="stylesheet" />
+
+  <!-- D3 library -->
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/d3/7.1.1/d3.min.js"></script>
+
+  <!-- Charts.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
+
+  <!-- Local CSS -->
+  <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/mapstyles.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/chartstyles.css">
+
+</head>
+
+<body>
+
+<!-- <h1>Chart JS Multi-Axis</h1> -->
+<div class="wrapper">
+  <canvas id="myChart"></canvas>
+</div>
+
+   <!-- Our JavaScript -->
+   <script src="{{url_for('static', filename='js/stockweather.js')}}"></script>
+   
+</body>
+
+
+</html>
+
