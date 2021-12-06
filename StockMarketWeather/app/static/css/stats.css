@@ -59,8 +59,29 @@
   *::after {
     box-sizing: border-box;
   }
+  /* from heam */
+  body, html{
+    background: #181E24;
+    padding-top: 10px;
+  }
+  
+  .wrapper{
+    width:95%;
+    display:block;
+    overflow:hidden;
+    margin:0 auto;
+    padding: 20px;
+    background:#fff;
+    border-radius:4px;
+  }
+  
+  canvas{
+    background:#fff;
+    height:1000px;
+    /* width: 500px; */
+  }
 
-
+  /* end from hiam */
 
 .fontupdate {
     margin: 0;
@@ -87,3 +108,7 @@
     display: inline-block;
     font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
+
+ 
+
+ 
