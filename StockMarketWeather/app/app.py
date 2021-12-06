@@ -53,6 +53,19 @@ def getchartData():
     print(fresultw)
     return (jsonify([fresultw,results]))
 
+#DropDown Query Route
+@app.route("/dropdown")
+def getDropdownData():
+    print('dropdown')
+    symbols = mongodb_client.db.StockList.find()
+    stocksym=[]
+    for sym in symbols:
+        del sym['_id']
+        stocksym.append(sym)
+        
+    print(stocksym)
+    return (jsonify(stocksym))
+
 @app.route("/stats")
 def getDataStats():
     # find the information
