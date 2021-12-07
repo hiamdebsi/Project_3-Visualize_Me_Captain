@@ -19,6 +19,11 @@ def home():
     # load home page
     return render_template("index.html")
 
+@app.route("/stats")
+def getStats():
+    # load home page
+    return render_template("stats.html")
+
 #Map Page Route
 @app.route("/map")
 def getMap():

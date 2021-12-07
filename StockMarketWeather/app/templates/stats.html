@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>NYSE  vs. Weather</title>
+        <title>Correlations</title>
         <!-- Favicon-->
         <link rel="shortcut icon" href="https://static.nyse.com/favicons/1.0.0/nyse.ico" type="image/x-icon">
 
@@ -38,9 +38,20 @@
         <!-- D3 library -->
         <script src=" https://cdnjs.cloudflare.com/ajax/libs/d3/7.1.1/d3.min.js"></script>
 
+        <!-- JQuery library -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> -->
+
         <!-- Charts.js Library -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.1/chart.min.js"></script>
+        
+        <!-- will go to 3.6.2 latest version always get -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+
+
+
+        <!-- sample 1 tooltip not working -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script> -->
+        
 
         <!-- Local CSS -->
         <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
@@ -68,15 +79,15 @@
         <!-- Masthead-->
         <header class="masthead">
             <div class="container">
-                <div class="masthead-subheading">Welcome</div>
-                <div class="masthead-heading">NYSE ANALYSIS</div> 
+                <!-- <div class="masthead-subheading">Welcome</div>
+                <div class="masthead-heading">NYSE ANALYSIS</div>  -->
                 <a class="btn btn-primary btn-xl text-uppercase" href="#stats">Show Correlation</a>
             </div>
         </header>
 
         <!-- Services-->
         <!-- <section class="page-section" id="stats"> -->
-        <div class="wrapper">
+        <div class="wrapper" id="stats">
             <div class="container">
                 <!-- add search with button -->
                 <form class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-4 border-bottom">
@@ -93,14 +104,14 @@
                     </datalist>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
+                        <input class="form-check-input" type="radio" name="flexRadioCorr" id="flexRadioCorr1" value="Price">
+                        <label class="form-check-label" for="flexRadioCorr1">
                           Price
                         </label>
                       </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                        <label class="form-check-label" for="flexRadioDefault2">
+                        <input class="form-check-input" type="radio" name="flexRadioCorr" id="flexRadioCorr2" value="Volume" checked>
+                        <label class="form-check-label" for="flexRadioCorr2">
                           Volume
                         </label>
                     </div>
