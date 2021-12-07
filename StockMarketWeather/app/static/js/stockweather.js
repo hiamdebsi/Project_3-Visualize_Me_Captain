@@ -1,26 +1,41 @@
 //DROPDOWN CREATION//
 function init(){
-  d3.select("#datalistOptions");
+  var selectDropdown = d3.select("#selDataset");
   const url1 = "/dropdown";
   console.log(url1)
   d3.json(url1).then(function(dropdown_values){
     console.log(dropdown_values)
 
+    let stocksymbol = [];
+      for (var i=0; i < dropdown_values.length; i++){
+          stocksymbol.push(dropdown_values[i].AB);
+      };
+
+      // console.log(`My temps:${temps}`);
+      console.log(stocksymbol);
+
+    stocksymbol.forEach((symbol) =>{
+      selectDropdown
+        .append("option")
+        .text(symbol)
+        .property("value", symbol);
+    });
+
+
     //Sample Data needed to build the charts/plots
-    var defaultdata = dropdown_values[0];
+    var defaultdata = stocksymbol[0];
     Dashboard(defaultdata);
   });//end of d3
 }//end of init function
 
 //If to select a new stock symbol
-function optionChanged(dropdown_values){
-  Dashboard(dropdown_values);
+function optionChanged(stocksymbol){
+  Dashboard(stocksymbol);
 };
 
 //Plot Function
-function Dashboard(dropdown_values){
-  //ADD MONGO CONNECTION HERE INSTEAD OF D3READING//
-  const url2 = "/stockweatherdata";
+function Dashboard(stocksymbol){
+  const url2 = "/stockweatherdata/"+`${stocksymbol}`;
   console.log(url2);
 
   d3.json(url2).then(function(response) {
@@ -69,7 +84,7 @@ function Dashboard(dropdown_values){
               "fill": false,
               "data": volumes,
               "id": "y2",
-              "label": "IBM Stock Volume",
+              "label": `${stocksymbol} Stock Volume`,
                       "yAxisID":"right"
       
             }
@@ -137,7 +152,8 @@ function Dashboard(dropdown_values){
             ]
           },
           "title": {
-            "display": false
+            "display": true,
+            "text":`${stocksymbol} Stock Volume and Price vs Max Temperature (C)`
           },
           "tooltips": {
             "intersect": false,
