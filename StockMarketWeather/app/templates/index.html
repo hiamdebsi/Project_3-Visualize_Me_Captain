@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>NYSE  vs. Weather</title>
+        <title>Weather vs NYSE HOME</title>
         <!-- Favicon-->
         <link rel="shortcut icon" href="https://static.nyse.com/favicons/1.0.0/nyse.ico" type="image/x-icon">
         <!-- Font Awesome icons (free version)-->
@@ -27,7 +27,6 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#problem">Problem</a></li>
                         <li class="nav-item"><a class="nav-link" href="stockweather">Analysis</a></li>
                         <li class="nav-item"><a class="nav-link" href="stats">Correlation</a></li>
                         <li class="nav-item"><a class="nav-link" href="map">Map</a></li>
@@ -87,8 +86,52 @@
                 </div>
             </div>
         </section>
-        <!-- add sections here -->
-       
+        <!-- add sections here RESULTS -->
+        <section class="page-section" id="results">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">RESULTS</h2>
+                    <h4 class="my-4">Weather (Max Temp) correlates to the local HQ's of  NYC stock exchanges during  Jan 2018 to Oct 2021.</h4>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-3">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-chart-line fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-4">Data Trends</h4>
+                        <p class="text-muted">The analyzer application is fairly straight forward to use. To view the trends you can go to the Analysis page and choose a stock (23 stocks are available, whose head quarters are in NYC).  You can see a sinusoidal trend for the maximum temperature across time, which is justified by the change in seasons. As for the stock volume, a trend does not appear using the time series chart. In order to confirm any correlations, you can go to the correlations page to view the a linear regression model. </p>
+                    </div>
+                    <div class="col-md-3">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-cloud-sun fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-4">Results</h4>
+                        <p class="text-muted">For the results you can view the correlations page and look at the Pearson r-squared value. The user enters the stock symbol, and then you can choose if you want to compare daily maximum temperature with the stock volume or with the stock close price.</p>
+                        <p class="text-muted">As one reviews the charts, over the expanse of the approximated three year period, one can notice some correlations by viewing the Pearson 'r squared' value.  The daily maximum temperature presents a strong possibility of a correlation with the stock close prices. As well, there is a moderate possibility of a correlation with the maximum temperature and volume. However, these correlations may adjust slightly depending on the stock that you have chosen.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-dollar-sign fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-4">Interpretion Notes</h4>
+                        <p class="text-muted">The strength of a correlation between the Maximum Temperature and a stock index price or transaction volume data is measured using the Pearson r2 values. Here we are defining a <b>Weak</b> relationship: r2 < 0.5 , <b>Moderate</b> relationship r2< 0.7 and <b>Strong</b> relationship >0.7 Pearson's r-squared correlation uses a linear regression analysis. Some of the plots for the data appear non-linear and an alternative correlation method should be used for accuracy.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-map-marked-alt fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-4">Map Notes</h4>
+                        <p class="text-muted">The application has an interactive map displaying the stock HQs of 23 stock markets within NYC. There is a zoom in feature which allows you to look into the map areas. When clicking on a particular marker, a popup shows up displaying the following information about the the HQ's; Stock Symbol, Full Company Name, HQ Address, Sector, Industry. This information is accurate as of Dec 2021.  </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        
         <!-- Footer-->
         <footer class="footer py-4">
             <div class="container">
