@@ -85,8 +85,8 @@ def getchartData(stocksym=None):
     stock = mongodb_client.db[collect]
     print(stock)
     
-    resultwe = weather.find({'date_time':{'$gte':"2020-01-01",'$lte':"2021-10-31"}})
-    resultst = stock.find({'date':{'$gte':"2020-01-01",'$lte':"2021-10-31"}})
+    resultwe = weather.find({'date_time':{'$gte':"2018-01-01",'$lte':"2021-10-31"}})
+    resultst = stock.find({'date':{'$gte':"2018-01-01",'$lte':"2021-10-31"}})
   
 
     #print(resultwe)
@@ -128,9 +128,9 @@ def getStatsData(stocksym=None):
     print(stock)
     # need to grab only columns want 3 calls, grab between dates
     # 1 ascending  .sort('maxtempC', 1)  db.inventory.find( { status: “A” }, { item: 1, status: 1 } )
-    resultwe = weather.find({'date_time':{'$gte':"2020-01-01",'$lte':"2021-10-31"}}, {'date_time':1,'maxtempC': 1})
+    resultwe = weather.find({'date_time':{'$gte':"2018-01-01",'$lte':"2021-10-31"}}, {'date_time':1,'maxtempC': 1})
     #resultwe = weather.find({'date_time':{'$gte':"2020-01-01",'$lte':"2021-10-31"}})
-    resultst = stock.find({'date':{'$gte':"2020-01-01",'$lte':"2021-10-31"}})
+    resultst = stock.find({'date':{'$gte':"2018-01-01",'$lte':"2021-10-31"}})
     #resultstclose = stock.find({'date':{'$gte':"2020-01-01",'$lte':"2021-10-31"}})
 
     print(resultwe)
