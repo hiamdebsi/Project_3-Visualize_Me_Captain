@@ -9,6 +9,15 @@
   <!-- Favicon-->
   <link rel="shortcut icon" href="https://static.nyse.com/favicons/1.0.0/nyse.ico" type="image/x-icon">
 
+  <!-- Font Awesome icons (free version)-->
+  <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+  <!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="../static/css/styles.css" rel="stylesheet" />
+  <link href="../static/css/mapstyles.css" rel="stylesheet" />
+
   <!-- Leaflet JavaScript code -->
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 
@@ -25,13 +34,43 @@
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
 
-   <link href="../static/css/mapstyles.css" rel="stylesheet" />
-  
-  
-  
 </head>
 <body id="page-top">
-    <div id="map"></div>
+<!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand" href="/">Weather vs NYSE</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars ms-1"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="stockweather">Analysis</a></li>
+                <li class="nav-item"><a class="nav-link" href="stats">Correlation</a></li>
+            </ul>
+        </div>
+    </div>
+  </nav>
+  <!-- Masthead-->
+  <header class="masthead">
+    <div class="container"> 
+        <a class="btn btn-primary btn-xl text-uppercase" href="#map">Let's Discover</a>
+    </div>
+  </header>
+
+  <div class="wrapper" id="map"></div> 
+  
+  <!-- Footer-->
+  <footer class="footer py-4">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-4 text-lg-start">Copyright &copy; 2021</div>
+        </div>
+    </div>
+  </footer>
+
  <!-- Our JavaScript -->
   <script src="{{url_for('static', filename='js/map.js')}}"></script>
   <!-- end js -->
