@@ -4,12 +4,6 @@ from flask import jsonify
 
 from flask_cors import CORS
 
-# import SciPy
-# import sklearn
-from scipy.stats.stats import pearsonr   
-# a = [1,4,6]
-# b = [1,2,3]   
-# print(pearsonr(a,b))
 
 app = Flask(__name__)
 
@@ -68,8 +62,6 @@ def getDropdownData():
     return (jsonify(stocksym))
 
 #Stock and Weather Data Retrieval Route
-#value to variable
-#after /stockweatherdata/<ticker>
 @app.route("/stockweatherdata")
 @app.route("/stockweatherdata/<stocksym>")
 def getchartData(stocksym=None):
@@ -78,16 +70,13 @@ def getchartData(stocksym=None):
         stocksym = "ABR"
     print(stocksym)
     collect = str(stocksym)
-    # print(list(mongodb_client.db.list_collection_names()))
-    # for collection in list(mongodb_client.db.list_collection_names()):
-    #     if collect == collection:
+
     weather = mongodb_client.db.NYC_Weather
     stock = mongodb_client.db[collect]
-    print(stock)
+    #print(stock)
     
     resultwe = weather.find({'date_time':{'$gte':"2018-01-01",'$lte':"2021-10-31"}})
     resultst = stock.find({'date':{'$gte':"2018-01-01",'$lte':"2021-10-31"}})
-  
 
     #print(resultwe)
     #print(resultst)
@@ -112,48 +101,6 @@ def getchartData(stocksym=None):
 
     return (jsonify([fresultw,results]))
 
-@app.route("/getStatsData")
-@app.route("/getStatsData/<stocksym>")
-def getStatsData(stocksym=None):
-    print('hello')
-    if not stocksym:
-        stocksym = "ABR"
-    print(stocksym)
-    collect = str(stocksym)
-    # print(list(mongodb_client.db.list_collection_names()))
-    # for collection in list(mongodb_client.db.list_collection_names()):
-    #     if collect == collection:
-    weather = mongodb_client.db.NYC_Weather
-    stock = mongodb_client.db[collect]
-    print(stock)
-    # need to grab only columns want 3 calls, grab between dates
-    # 1 ascending  .sort('maxtempC', 1)  db.inventory.find( { status: “A” }, { item: 1, status: 1 } )
-    resultwe = weather.find({'date_time':{'$gte':"2018-01-01",'$lte':"2021-10-31"}}, {'date_time':1,'maxtempC': 1})
-    #resultwe = weather.find({'date_time':{'$gte':"2020-01-01",'$lte':"2021-10-31"}})
-    resultst = stock.find({'date':{'$gte':"2018-01-01",'$lte':"2021-10-31"}})
-    #resultstclose = stock.find({'date':{'$gte':"2020-01-01",'$lte':"2021-10-31"}})
-
-    print(resultwe)
-
-    resultw=[]
-    for each in resultwe:
-        del each['_id']
-        resultw.append(each)
-
-    results=[]
-    for each in resultst:
-        del each['_id']
-        results.append(each)
-
-    fresultw=[]
-    for day in resultw:
-        for sday in results:
-            if (day["date_time"] == sday["date"]):
-                fresultw.append(day)
-    
-    #print(fresultw)
-
-    return (jsonify([fresultw,results]))
 
 if __name__ == "__main__":
     app.run(debug=True)

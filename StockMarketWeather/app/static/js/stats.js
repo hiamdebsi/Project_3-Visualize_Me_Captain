@@ -20,8 +20,7 @@ function init(){
         .text(symbol)
         .property("value", symbol);
     });
-
-    //Sample Data needed to build the charts/plots
+    
     var defaultdata = stocksymbol[0];
     createChart(defaultdata);
   });//end of d3
@@ -32,102 +31,111 @@ function optionChanged(stocksymbol){
   createChart(stocksymbol);
 };
 
-// need to get the data
-//unction getData(stocksymbol)
+
 //CREATE CHART FUNCTION
 function createChart(stocksymbol){
   
-  const url = "/getStatsData/"+`${stocksymbol}`;
+  const url = "/stockweatherdata/"+`${stocksymbol}`;
   console.log(url);
 
   d3.json(url).then(function(response) {
+  
+    var radioSelected = "";
+    //console.log(response)
+    // use document . get element by id instead!
+    d3.selectAll("input[name='flexRadioCorr']").on("change", function(){
+      
+      radioSelected = this.value;
+      updateChart(stocksymbol, data, radioSelected, corrClosePrice, corrVolume)
+      
+    });
+   
+    // Check last radio selection
+    console.log ("my radio selected may be null here");
+    console.log(radioSelected);
+    if (radioSelected == null || radioSelected === '') {
+      console.log("in radio selected == null");
+      // get the last selected value
+      if (document.getElementById('flexRadioCorr1').checked) {
+        radioSelected = document.getElementById('flexRadioCorr1').value;
+      }
+      else {
+          radioSelected = document.getElementById('flexRadioCorr2').value;
+        } 
+      
+    }
     
 
-    //let radioCalled = false;
-    var radioSelected;
-      //console.log(response)
-      // use document . get element by id instead!
-      d3.selectAll("input[name='flexRadioCorr']").on("change", function(){
-        // event happened need to redraw
-        // just need boolean to draw new chart with what have?
-        // just need to do an UPDATE for the chart HERE?????
-        // does it continue code from here on??? or get destroyed at top
-        // can always great a boolean value to say if this was here or not
-        console.log(this.value)
-        radioSelected = this.value;
-        updateChart(stocksymbol, data, radioSelected)
-        //radioCalled = true;
-        // create another map and pass data through here
-      });
-      console.log(radioSelected);
+    weather = response[0];
+    stock = response[1];
 
-        weather = response[0];
-        stock = response[1];
+    // get the close prices
+    let closePriceArray = stock.map(({ close }) => close);
+    //console.log(closePriceArray);
+    closePriceArray.sort(function(a, b){return a - b});
 
-        // get the close prices
-        let closePriceArray = stock.map(({ close }) => close);
-        //console.log(closePriceArray);
-        closePriceArray.sort(function(a, b){return a - b});
+    let volumesArray = stock.map(({ volume }) => volume);
+    console.log(volumesArray);
+    // sorted ascending
+    volumesArray.sort(function(a, b){return a - b});
 
-        let volumesArray = stock.map(({ volume }) => volume);
-        console.log(volumesArray);
-        // sorted ascending
-        volumesArray.sort(function(a, b){return a - b});
+    //let tempDatesArray = weather.map(({ date_time }) => date_time);
 
-        let tempDatesArray = weather.map(({ date_time }) => date_time);
-
-        let tempMaxCArray = weather.map(({ maxtempC }) => maxtempC);
-        // sort ascending
-        tempMaxCArray.sort(function(a, b){return a - b});
-      
+    let tempMaxCArray = weather.map(({ maxtempC }) => maxtempC);
+    // sort ascending
+    tempMaxCArray.sort(function(a, b){return a - b});
 
 
-        //tempDatesArray (not needed here)
-        // closePriceArray, volumesArray, tempMaxCArray
-        //give scatter plot acceptable format 
-        const data = tempMaxCArray.map((temp,index)=>{
-          let dataObject ={};
-          dataObject.temp = temp;
-          //console.log(temp);
-          dataObject.financials={};
-          dataObject.financials.closeprice = closePriceArray[index];
-          //console.log(closePriceArray[index]);
-          dataObject.financials.volume = volumesArray[index];
+    // CORRELATION MATH
+    // get the correlation for both the price and volume with maxTempC
+    corrVolume = pearsonCorrelation([tempMaxCArray, volumesArray],0,1);
+    corrClosePrice = pearsonCorrelation([tempMaxCArray,closePriceArray],0,1);
+   
+    //give scatter plot acceptable format 
+    const data = tempMaxCArray.map((temp,index)=>{
+      let dataObject ={};
+      dataObject.temp = temp;
+      dataObject.financials={};
+      dataObject.financials.closeprice = closePriceArray[index];
+      dataObject.financials.volume = volumesArray[index];
 
-          return dataObject;
+      return dataObject;
 
-        })
-        console.log(data);
-        // "label": `${stocksymbol} Stock Volume`,
-        // set up initial chart vars , radio button Volume
-        LEGENDLABEL = 'Max Temp (C) vs Volume';
-        YAXISKEY = 'financials.volume';
-        CHARTTITLE = `Weather vs ${stocksymbol} Stock Volume`;
-        XAXISTITLE = 'Temperature (C)';
-        YAXISTITLE = 'Stock Volume';
-        TICKERADJUST = '';
-        // adjust the chart vars, radio button Price
-        if (radioSelected === 'Price'){
-          CHARTTITLE = `Weather vs ${stocksymbol} Close Price`;
-          YAXISTITLE = 'Price';
-          YAXISKEY = 'financials.closeprice';
-          TICKERADJUST = '$ '
-          console.log(CHARTTITLE);
-        }
+    })
+    //console.log(data);
+    // set up initial chart vars , radio button Volume
+    LEGENDLABEL = 'Max Temp (C) vs Volume';
+    YAXISKEY = 'financials.volume';
+    CHARTTITLE = `Maximum Daily Temperature vs ${stocksymbol} Stock Volume between Jan 2018 - Oct 2021`;
+    XAXISTITLE = 'Maximum Temperature (C)';
+    YAXISTITLE = 'Stock Volume';
+    TICKERADJUST = '';
+    // adjust the chart vars, radio button Price
+    if (radioSelected === 'Price'){
+      LEGENDLABEL = 'Max Temp (C) vs Price';
+      CHARTTITLE = `Maximum Daily Temperature vs ${stocksymbol} Close Price between Jan 2018 - Oct 2021`;
+      YAXISTITLE = 'Price';
+      YAXISKEY = 'financials.closeprice';
+      TICKERADJUST = '$ '
+      console.log(CHARTTITLE);
+      // put correlation price to view
+      displayCorr(corrClosePrice);
 
-          
+    }
+    else{
+      // put the volume corr price to view
+      displayCorr(corrVolume);
+    }
 
-      // scatter plot
-      // on drop down , destroy the instance
-     // THIS IS WORKING TO DESTROY all instances: but need an update one as well
-    // for when change in the radio button
+        
 
+    // scatter chart
     clearChart();
 
     var doc1 = document.getElementById("myChart");
     var ctx1 = doc1.getContext("2d");
 
-      // myChart= new Chart(document.getElementById('myChart'), {   
+ 
       window.myNewChart1 = new Chart(ctx1,{
       type: 'scatter',
       data: {
@@ -169,23 +177,19 @@ function createChart(stocksymbol){
                     text: YAXISTITLE
                   },
                   ticks:{
-                    //works to put on $ for y axis : still no label
-                    // this works
                     callback: function(value,index,values){
                       return TICKERADJUST + value;
                     } }  // end of ticks
-                 },  // end of y
+                  },  // end of y
             },  // end of scales 
         }   // end of chart options
 
     });  // end of chart
 
+    });   //end d3
 
-  // }); // end inner d3 of the radio button
-  });   //end d3
   
-  
-}; // end function
+}; // end function create chart
 
 function clearChart(){
   if(window.myNewChart1 != null){
@@ -194,23 +198,33 @@ function clearChart(){
 };
 
 
-function updateChart(stocksymbol, data, radioSelected){
+function updateChart(stocksymbol, data, radioSelected, corrClosePrice, corrVolume){
   clearChart();
+
 
   LEGENDLABEL = 'Max Temp (C) vs Volume';
   YAXISKEY = 'financials.volume';
-  CHARTTITLE = `Weather vs ${stocksymbol} Stock Volume`;
-  XAXISTITLE = 'Temperature (C)';
+  CHARTTITLE = `Maximum Daily Temperature vs ${stocksymbol} Stock Volume between Jan 2018 - Oct 2021`;
+  XAXISTITLE = 'Maximum Temperature (C)';
   YAXISTITLE = 'Stock Volume';
   TICKERADJUST = '';
   // adjust the chart vars, radio button Price
   if (radioSelected === 'Price'){
-    CHARTTITLE = `Weather vs ${stocksymbol} Close Price`;
+    LEGENDLABEL = 'Max Temp (C) vs Price';
+    CHARTTITLE = `Maximum Daily Temperature vs ${stocksymbol} Close Price between Jan 2018 - Oct 2021`;
     YAXISTITLE = 'Price';
     YAXISKEY = 'financials.closeprice';
     TICKERADJUST = '$ '
     console.log(CHARTTITLE);
+    // put correlation price to view
+    displayCorr(corrClosePrice);
+
   }
+  else{
+    // put the volume corr price to view
+    displayCorr(corrVolume);
+  }
+
 
   var doc1 = document.getElementById("myChart");
   var ctx1 = doc1.getContext("2d");
@@ -257,8 +271,6 @@ function updateChart(stocksymbol, data, radioSelected){
                 text: YAXISTITLE
               },
               ticks:{
-                //works to put on $ for y axis : still no label
-                // this works
                 callback: function(value,index,values){
                   return TICKERADJUST + value;
                 } }  // end of ticks
@@ -266,9 +278,21 @@ function updateChart(stocksymbol, data, radioSelected){
         },  // end of scales 
     }   // end of chart options
 
-});  // end of chart
+ });  // end create chart
 
-};
+}; // end of update chart function
+
+function displayCorr(corrValue){
+  // returns r and want to see r2
+  if (corrValue){
+    var den2 = Math.pow(corrValue,2);
+    // five decimal places at the most  num.toString();
+    den2= den2.toFixed(5);
+    document.getElementById('lblRValue').innerHTML = den2.toString();
+
+  }
+};  // end of displayCorr
+
 
 
 init();
