@@ -5,16 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Stock and Weather Analysis</title>
+  <title>Data Analysis</title>
   <link rel="shortcut icon" type="image/jpg" href="USGSDatasetRepository.png"/>
 
   <!-- Favicon-->
   <link rel="shortcut icon" href="https://static.nyse.com/favicons/1.0.0/nyse.ico" type="image/x-icon">
+
   <!-- Font Awesome icons (free version)-->
   <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+
   <!-- Google fonts-->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+
   <!-- Core theme CSS (includes Bootstrap)-->
   <link href="../static/css/styles.css" rel="stylesheet" />
   <link href="../static/css/stats.css" rel="stylesheet" />
@@ -28,13 +31,12 @@
 
   <!-- Local CSS -->
   <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
-  <link rel="stylesheet" type="text/css" href="../static/css/mapstyles.css">
   <link rel="stylesheet" type="text/css" href="../static/css/chartstyles.css">
 
 </head>
 
 <body id="page-top">
-<!-- Navigation-->
+  <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
         <a class="navbar-brand" href="/">Weather vs NYSE</a>
@@ -44,9 +46,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                <li class="nav-item"><a class="nav-link" href="/">Problem</a></li>
-                <li class="nav-item"><a class="nav-link" href="map" target="_blank">Map</a></li>
-                <li class="nav-item"><a class="nav-link" href="stockweather" target="_blank">Analysis</a></li>
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="map">Map</a></li>
+                <li class="nav-item"><a class="nav-link" href="stats">Correlation</a></li>
             </ul>
         </div>
     </div>
@@ -54,68 +56,41 @@
   <!-- Masthead-->
   <header class="masthead">
     <div class="container">
-        <div class="masthead-subheading">Welcome</div>
-        <div class="masthead-heading">NYSE ANALYSIS</div> 
-        <a class="btn btn-primary btn-xl text-uppercase" href="#problem">Correlation</a>
+        <!-- <div class="masthead-subheading">Welcome</div>
+        <div class="masthead-heading">NYSE ANALYSIS</div>  -->
+        <a class="btn btn-primary btn-xl text-uppercase" href="#analysis">View Analysis</a>
     </div>
   </header>
 
   <!-- Services-->
-  <section class="page-section" id="stats">
+  <section class="wrapper" id="analysis">
     <div class="container">
         <!-- add search with button -->
         <form class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-4 border-bottom">
-        <!-- <form class="d-flex"> -->
 
-          <div class="well">
-            <h5>Test Subject ID No.:</h5>
+          <!-- Dropdown Menu -->
+          <div class="form-check">
+            <label>Choose a Stock:</label>
             <select id="selDataset" onchange="optionChanged(this.value)"></select>
           </div>
           
-          <!-- <div class="dropdown">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
-              Dropdown button
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Link 1</a></li>
-              <li><a class="dropdown-item" href="#">Link 2</a></li>
-              <li><a class="dropdown-item" href="#">Link 3</a></li>
-            </ul>
-          </div> -->
-
-
-            <!-- <label for="stockDataList" class="form-label">Search Stocks</label>
-            <input class="form-control me-2 fontupdate" list="datalistOptions" id="stockDataList" autocomplete=”on” placeholder="Type to search...">
-            <datalist id="datalistOptions" onchange="optionChanged(this.value)">
-                <option value="ARI">
-                <option value="BG">
-                <option value="BX">
-                <option value="C">
-                <option value="IBM">
-            </datalist> -->
-
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
-                  Price
-                </label>
-              </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                <label class="form-check-label" for="flexRadioDefault2">
-                  Volume
-                </label>
-            </div>
-          
-            <button class="btn btn-primary btn-sm text-uppercase" type="submit">Submit</button>
         </form>
-        
+      </div>
   </section>
-  <!-- <h1>Chart JS Multi-Axis</h1> -->
-  <div class="wrapper">
-    <canvas id="myChart"></canvas>
+
+  <!-- Charts -->
+  <div class="container">
+    <div class="wrapper">
+      <canvas id="myChart"></canvas>
+    </div>
   </div>
-    
+  
+  <div class="container">
+    <div class="wrapper">
+      <canvas id="myChart2"></canvas>
+    </div>
+  </div>
+
   <!-- Footer-->
   <footer class="footer py-4">
     <div class="container">
