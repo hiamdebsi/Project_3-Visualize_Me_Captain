@@ -50,7 +50,7 @@ In the last page of our website, we have an interactive map displaying the stock
 * Sector
 * Industry
 
-## Code Highlight
+# Code Highlight
 * ### [ETL Process](https://github.com/hiamdebsi/Project_3-Visualize_Me_Captain/blob/main/Project%203%20-%20Report.pdf)
 * ### [Flask App Queries](https://github.com/hiamdebsi/Project_3-Visualize_Me_Captain/blob/main/StockMarketWeather/app/app.py)
 * ### [HTML Templates](https://github.com/hiamdebsi/Project_3-Visualize_Me_Captain/tree/main/StockMarketWeather/app/templates)
