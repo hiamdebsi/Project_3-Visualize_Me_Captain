@@ -33,7 +33,7 @@ To answer these questions and to confirm our hypothesis, we extracted data for N
   * To create our interactive webpage: [Bootstrap 5.0 template](https://startbootstrap.com/previews/agency)
 
 
-## Web Page Breakdown
+# Web Page Breakdown
 ### [Home Page:](https://github.com/hiamdebsi/Project_3-Visualize_Me_Captain/blob/main/StockMarketWeather/app/templates/index.html)
 Our landing page is where you will find our motivation, hypothesis, and steps taken to gather needed data for the following pages. In addition, it displays the results we obtained from the data analysis and correlation performed.
 ### [Analysis Page:](https://github.com/hiamdebsi/Project_3-Visualize_Me_Captain/blob/main/StockMarketWeather/app/templates/stockweather.html)
