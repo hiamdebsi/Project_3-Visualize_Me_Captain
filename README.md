@@ -60,8 +60,9 @@ In the last page of our website, we have an interactive map displaying the stock
 
 # Research Analysis
 Our analysis focused on three main variables: daily max temperature, stock volume, and stock closing price. 
-  * The stock closing price is the last price at which a financial investment with monetary value (or better known as security) is traded during the regular trading day. A security’s closing price is the standard benchmark used by investors to track its performance over time.[(1)](https://www.investopedia.com/terms/c/closingprice.asp)
-  * Stock volume on the other hand is the number of shares of a security traded during a given period of time. Generally, securities with a higher daily volume are more liquid than those without given that they are more active. Volume can help indicate relative significance of a market move.[(2)](https://www.investopedia.com/terms/v/volume.asp)
+* The stock closing price is the last price at which a financial investment with monetary value (or better known as security) is traded during the regular trading day. A security’s closing price is the standard benchmark used by investors to track its performance over time.[(1)](https://www.investopedia.com/terms/c/closingprice.asp)
+* Stock volume on the other hand is the number of shares of a security traded during a given period of time. Generally, securities with a higher daily volume are more liquid than those without given that they are more active. Volume can help indicate relative significance of a market move.[(2)](https://www.investopedia.com/terms/v/volume.asp)
+
 In Figures 1.0 and 1.1, we can see a sinusoidal trend for the max temperature across time, which is justified by the change in seasons. As for the stock volume, there seems to be a linear trend that is mostly consistent over time. Between the max temperature and stock volume, there does not appear to be a particular trend. This same observation is applicable to the second figure. 
 In order to confirm this further, we created a regression model for each stock variable being analyzed vs the max temperature, to see if there is any relationship between the two (Figures 1.2 and 1.3).
 The strength of a correlation between the Maximum Temperature and a Stock Closing Price or Transaction Volume data is measured using the Pearson r<sup>2</sup> values: 
@@ -70,6 +71,7 @@ The strength of a correlation between the Maximum Temperature and a Stock Closin
   * Strong relationship:  r<sup>2</sup> >= 0.7
 
 As one reviews the plots, over the expanse of the approximated three year period, one can notice some correlations by viewing the Pearson ‘r-squared’ value. The daily maximum temperature presents a strong possibility of a correlation with the stock close prices, given that the r<sup>2</sup> value is greater than 0.9. As well, there is a moderate possibility of a correlation with the maximum temperature and volume, with an r<sup>2</sup> value greater than 0.5. However, these correlations may adjust slightly depending on the stock that is chosen for the production of the charts.
+
 We do have to note that Pearson’s r-squared correlation uses a linear regression model. Some of the plots for the data appear non-linear and an alternative correlation method should be used for accuracy.
 
 # Conclusions
