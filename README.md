@@ -1,5 +1,5 @@
 # The "STOCK" Network: NYSE Analysis
-Please refer to the [report](#) and [presentation](#) for a thorough explanation of this project. Below you will find the analysis steps and links to the relevant folders and files.
+Please refer to the [report](https://github.com/hiamdebsi/Project_3-Visualize_Me_Captain/blob/main/Project%203%20-%20Report.pdf) and [presentation](https://github.com/hiamdebsi/Project_3-Visualize_Me_Captain/blob/main/Project%203%20-%20Presentation.pdf) for a thorough explanation of this project. Below you will find the analysis steps and links to the relevant folders and files.
 
 ## Motivation
 A gentle breeze, a bit of rain… We don’t mind this. Although, when it comes to a full downpour of rain or a large snow storm, this inclement weather may devastate a life, damage a property, or close off an internet connection. Did some climatic event affect your financial situation? Let’s investigate if daily weather has some effect on stock markets.
