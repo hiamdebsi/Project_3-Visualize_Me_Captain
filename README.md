@@ -22,7 +22,7 @@ To answer these questions and to confirm our hypothesis, we extracted data for N
   * NYC Daily Weather Data: [World Weather Online API](https://www.worldweatheronline.com/developer/api/docs/historical-weather-api.aspx)
   * Stock Information: [Alphavantage API](https://www.alphavantage.co/documentation/#avc-price)
   * Geo Information: Google Maps and Geopy
-  * Data CSV and Json File
+  * [Data CSV and Json Files](https://github.com/hiamdebsi/Project_3-Visualize_Me_Captain/tree/main/StockMarketWeather/app/data)
 
 ## Final Production Database: 
  * MongoDB
