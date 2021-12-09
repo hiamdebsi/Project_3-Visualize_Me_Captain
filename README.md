@@ -75,7 +75,7 @@ We do have to note that Pearson’s r-squared correlation uses a linear regressi
 # Conclusions
 Based on the findings obtained, we accept the null hypothesis declared of Weather (Max Temp) correlates to the local HQs of NYC stock exchanges during January 2018 to October 2021. 
 
-When a regression analysis is performed, the daily maximum temperature presents a strong possibility of a correlation with the stock close prices (for IBM the r<sup>2</sup=0.96884). As well, there is a moderate possibility of a correlation with the maximum temperature and volume, with an r<sup>2</sup value of greater than 0.52819 for IBM. 
+When a regression analysis is performed, the daily maximum temperature presents a strong possibility of a correlation with the stock close prices (for IBM the r<sup>2</sup>=0.96884). As well, there is a moderate possibility of a correlation with the maximum temperature and volume, with an r<sup>2</sup> value of greater than 0.52819 for IBM. 
 
 ## Notes on Conclusions
 
