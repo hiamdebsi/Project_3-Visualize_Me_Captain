@@ -25,7 +25,7 @@ To answer these questions and to confirm our hypothesis, we extracted data for N
   * Data CSV and Json File
 
 ## Final Production Database: 
-MongoDB
+ * MongoDB
 
 ## Javascript Libraries Used: 
   * Visualizations for Analysis and Correlation: [Chart.js](https://www.chartjs.org/)
@@ -42,7 +42,7 @@ There is a dropdown menu which allows you to switch between 23 stock markets wit
 Both graphs are interactive, and you can get the exact values of each point by just clicking on it.
 There is also the option to only display one of the two y variables on each graph. For instance, if you only want the stock volume to appear on the first graph, you simply click on the Max Temperature line in the legend, and it will automatically cross it out and remove temperature data from the graph.
 ### [Correlation Page:](https://github.com/hiamdebsi/Project_3-Visualize_Me_Captain/blob/main/StockMarketWeather/app/templates/stats.html)
-In this page, we find an interactive scatter plot which can be manipulated by two things: the stock symbol selected through the same dropdown as the previous page, and the stock variable through the two buttons next to the dropdown. When a stock symbol and variable are selected, the appropriate chart shows up, and an r2 value is calculated, to help determine the strength of correlation between the data.
+In this page, we find an interactive scatter plot which can be manipulated by two things: the stock symbol selected through the same dropdown as the previous page, and the stock variable through the two buttons next to the dropdown. When a stock symbol and variable are selected, the appropriate chart shows up, and an r<sup>2</sup> value is calculated, to help determine the strength of correlation between the data.
 ### [Map Page:](https://github.com/hiamdebsi/Project_3-Visualize_Me_Captain/blob/main/StockMarketWeather/app/templates/map.html)
 In the last page of our website, we have an interactive map displaying the stock HQs of 23 stock markets within NYC. There is a zoom in feature which allows you to look into the map areas. When clicking on a particular marker, a popup shows up displaying the following about the HQ in question:
 * Stock Symbol and Full Company Name
@@ -51,7 +51,8 @@ In the last page of our website, we have an interactive map displaying the stock
 * Industry
 
 ## Code Highlight
-* ### ETL Process:vPlease refer to the [report](#) to see a runthough of the ETL process
+* ### ETL Process:
+ *  Please refer to the [report](#) to see a runthough of the ETL process
 * ### [Flask App Queries](https://github.com/hiamdebsi/Project_3-Visualize_Me_Captain/blob/main/StockMarketWeather/app/app.py)
 * ### [HTML Templates](https://github.com/hiamdebsi/Project_3-Visualize_Me_Captain/tree/main/StockMarketWeather/app/templates)
 * ### [Javascripts](https://github.com/hiamdebsi/Project_3-Visualize_Me_Captain/tree/main/StockMarketWeather/app/static/js)
