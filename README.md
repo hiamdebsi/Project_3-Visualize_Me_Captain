@@ -42,9 +42,11 @@ There is a dropdown menu which allows you to switch between 23 stock markets wit
 Both graphs are interactive, and you can get the exact values of each point by just clicking on it.
 There is also the option to only display one of the two y variables on each graph. For instance, if you only want the stock volume to appear on the first graph, you simply click on the Max Temperature line in the legend, and it will automatically cross it out and remove temperature data from the graph.
 ### [Correlation Page:](https://github.com/hiamdebsi/Project_3-Visualize_Me_Captain/blob/main/StockMarketWeather/app/templates/stats.html)
-In this page, we find an interactive scatter plot which can be manipulated by two things: the stock symbol selected through the same dropdown as the previous page, and the stock variable through the two buttons next to the dropdown. When a stock symbol and variable are selected, the appropriate chart shows up, and an r<sup>2</sup> value is calculated, to help determine the strength of correlation between the data.
+In this page, we find an interactive scatter plot which can be manipulated by two things: the stock symbol selected through the dropdown, and two radio buttons to display the volume or price for the stock chosen. The result is a scatter plot of Max Temp vs Close Price or Max Temp vs Volume. Additionally, the Pearson r<sup>2</sup> value is calculated, to help determine the fit of the correlation for the chart.
+
 ### [Map Page:](https://github.com/hiamdebsi/Project_3-Visualize_Me_Captain/blob/main/StockMarketWeather/app/templates/map.html)
-In the last page of our website, we have an interactive map displaying the stock HQs of 23 stock markets within NYC. There is a zoom in feature which allows you to look into the map areas. When clicking on a particular marker, a popup shows up displaying the following about the HQ in question:
+The map page shows an interactive map displaying the stock HQs of 23 stock markets within NYC. There is a ‘zoom in’ feature which allows you to look into the map areas. When clicking on a particular marker, a popup shows up displaying the following about the HQ marker chosen:
+
 * Stock Symbol and Full Company Name
 * HQ Address
 * Sector
@@ -70,9 +72,9 @@ The strength of a correlation between the Maximum Temperature and a Stock Closin
   * Moderate relationship: 0.5<  r<sup>2</sup> < 0.7
   * Strong relationship:  r<sup>2</sup> >= 0.7
 
-As one reviews the plots, over the expanse of the approximated three year period, one can notice some correlations by viewing the Pearson ‘r-squared’ value. The daily maximum temperature presents a strong possibility of a correlation with the stock close prices, given that the r<sup>2</sup> value is greater than 0.9. As well, there is a moderate possibility of a correlation with the maximum temperature and volume, with an r<sup>2</sup> value greater than 0.5. However, these correlations may adjust slightly depending on the stock that is chosen for the production of the charts.
+As one reviews the scatter plots, one can notice some correlations by viewing the Pearson ‘r-squared’ value. The daily maximum temperature presents a strong possibility of a correlation with the stock close prices, given that the r<sup>2</sup> value is greater than 0.9. As well, there is a moderate possibility of a correlation with the maximum temperature and volume, with an r<sup>2</sup> value greater than 0.5. However, these correlations may adjust slightly depending on the stock that is chosen.
 
-We do have to note that Pearson’s r-squared correlation uses a linear regression model. Some of the plots for the data appear non-linear and an alternative correlation method should be used for accuracy.
+We do have to note that Pearson’s r-squared correlation uses a linear regression model. Some of the plots for the data appear non-linear and an alternative correlation method could be used for accuracy.
 
 # Conclusions
 Based on the findings obtained, we accept the null hypothesis declared of Weather (Max Temp) correlates to the local HQs of NYC stock exchanges during January 2018 to October 2021. 

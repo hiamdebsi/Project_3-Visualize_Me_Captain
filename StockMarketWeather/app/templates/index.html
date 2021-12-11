@@ -47,8 +47,8 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Problem Analysis</h2>
-                    <h4 class="my-3">Weather (Max Temp) correlates to the local HQ's of  NYC stock exchanges during  Jan 2018 to Oct 2021.</h4>
-                    <h3 class="section-subheading text-muted">A gentle breeze, a bit of rain... I don't mind this. Although, when it comes to a full out rain or snow storm, this inclement weather may devastate a life, damage property, or close off an internet connection. Did some climatic event affect your financial situation? Let us investigate if daily weather has some affect on stock markets.     </h3>
+                    <h4 class="my-3">Weather (Max Temp) correlates to the local HQ's of  NYC stock exchange Close Price and Volume during Jan 2018 to Oct 2021.</h4>
+                    <h3 class="section-subheading text-muted">A gentle breeze, a bit of rain... I don't mind this. Although, when it comes to a full out downpour of rain or a bad snow storm, this inclement weather may devastate a life, damage property, or close off an internet connection. Did some climatic event affect your financial situation? Let us investigate if daily weather has some affect on stock markets.     </h3>
                 </div>
                 <div class="row text-center">
                     <div class="col-md-3">
@@ -91,7 +91,7 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">RESULTS</h2>
-                    <h4 class="my-4">Weather (Max Temp) correlates to the local HQ's of  NYC stock exchanges during  Jan 2018 to Oct 2021.</h4>
+                    <h4 class="my-4">Weather (Max Temp) correlates to the local HQ's of  NYC stock exchange Close Price and Volume during Jan 2018 to Oct 2021.</h4>
                 </div>
                 <div class="row text-center">
                     <div class="col-md-3">
@@ -100,16 +100,16 @@
                             <i class="fas fa-chart-line fa-stack-1x fa-inverse"></i>
                         </span>
                         <h4 class="my-4">Data Trends</h4>
-                        <p class="text-muted">The analyzer application is fairly straight forward to use. To view the trends you can go to the Analysis page and choose a stock (23 stocks are available, whose head quarters are in NYC).  You can see a sinusoidal trend for the maximum temperature across time, which is justified by the change in seasons. As for the stock volume, a trend does not appear using the time series chart. In order to confirm any correlations, you can go to the correlations page to view the a linear regression model. </p>
+                        <p class="text-muted">The analyzer application is fairly straight forward to use. To view the trends you can go to the Analysis page and choose a stock (23 stocks are available, whose head quarters are in NYC).  You can see a sinusoidal trend for the maximum temperature across time, which is justified by the change in seasons. As for the stock volume, a trend does not appear using the time series chart. In order to confirm any correlations, you can go to the correlations page to view the scatter charts. </p>
                     </div>
                     <div class="col-md-3">
                         <span class="fa-stack fa-4x">
                             <i class="fas fa-circle fa-stack-2x text-primary"></i>
                             <i class="fas fa-cloud-sun fa-stack-1x fa-inverse"></i>
                         </span>
-                        <h4 class="my-4">Results</h4>
+                        <h4 class="my-4">Results: Correlation</h4>
                         <p class="text-muted">For the results you can view the correlations page and look at the Pearson r-squared value. The user enters the stock symbol, and then you can choose if you want to compare daily maximum temperature with the stock volume or with the stock close price.</p>
-                        <p class="text-muted">As one reviews the charts, over the expanse of the approximated three year period, one can notice some correlations by viewing the Pearson 'r squared' value.  The daily maximum temperature presents a strong possibility of a correlation with the stock close prices. As well, there is a moderate possibility of a correlation with the maximum temperature and volume. However, these correlations may adjust slightly depending on the stock that you have chosen.</p>
+                        <p class="text-muted">As you review the charts, you can notice some correlations by viewing the Pearson 'r squared' value.  The daily maximum temperature presents a strong possibility of a correlation with the stock close prices. As well, there is a moderate possibility of a correlation with the maximum temperature and volume. However, these correlations may adjust slightly depending on the stock that you have chosen.</p>
                     </div>
                     <div class="col-md-3">
                         <span class="fa-stack fa-4x">
@@ -117,7 +117,7 @@
                             <i class="fas fa-dollar-sign fa-stack-1x fa-inverse"></i>
                         </span>
                         <h4 class="my-4">Interpretion Notes</h4>
-                        <p class="text-muted">The strength of a correlation between the Maximum Temperature and a stock index price or transaction volume data is measured using the Pearson r2 values. Here we are defining a <b>Weak</b> relationship: r2 < 0.5 , <b>Moderate</b> relationship r2< 0.7 and <b>Strong</b> relationship >0.7 Pearson's r-squared correlation uses a linear regression analysis. Some of the plots for the data appear non-linear and an alternative correlation method should be used for accuracy.</p>
+                        <p class="text-muted">The strength of a correlation between the Maximum Temperature and a stock index close price or transaction volume data is measured using the Pearson r-squared values. Here we are defining a <b>Weak</b> relationship: r2 < 0.5 , <b>Moderate</b> relationship r2< 0.7 and <b>Strong</b> relationship >0.7 Pearson's r-squared correlation uses a linear regression analysis. Some of the plots for the data appear non-linear and an alternative correlation method can be used for accuracy.</p>
                     </div>
                     <div class="col-md-3">
                         <span class="fa-stack fa-4x">
@@ -135,8 +135,8 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Hypothesis</h2>
-                    <h4 class="my-4">Weather (Max Temp) correlates to the local HQ's of  NYC stock exchanges during  Jan 2018 to Oct 2021.</h4>
-                    <h3 class="section-subheading text-muted">Based on the findings obtained we accept the null hypothesis declared of Weather (Max Temp) correlates to the local HQ's of  NYC stock exchanges during Jan 2018 to Oct 2021. When a regression analysis is performed, the daily maximum temperature presents a strong possibility of a correlation with the stock close prices (for IBM the r2= 0.96884). As well, there is a moderate possibility of a correlation with the maximum temperature and volume, with an r2 value of 0.52819 for IBM.  </h3>
+                    <h4 class="my-4">Weather (Max Temp) correlates to the local HQ's of  NYC stock exchange Close Price and Volume during Jan 2018 to Oct 2021.</h4>
+                    <h3 class="section-subheading text-muted">Based on the findings obtained we can not reject the null hypothesis declared of Weather (Max Temp) correlates to the local HQ's of  NYC stock exchange Close Price and Volume during Jan 2018 to Oct 2021. When a regression analysis is performed, the daily maximum temperature presents a strong possibility of a correlation with the stock close prices (for IBM the r2= 0.96884). As well, there is a moderate possibility of a correlation with the maximum temperature and volume, with an r2 value of 0.52819 for IBM.  </h3>
                 </div>
             </div>
         </section>
